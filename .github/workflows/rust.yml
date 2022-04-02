@@ -23,7 +23,7 @@ jobs:
     - name: Install target
       run: rustup target install armv7-unknown-linux-gnueabihf
     - name: Build artifact
-      run: cargo build --target armv7-unknown-linux-musleabihf --release
+      run: cargo build --target armv7-unknown-linux-gnueabihf --release
     - name: Upload Build
       uses: actions/upload-artifact@v2
       with:
