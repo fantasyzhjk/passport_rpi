@@ -1,0 +1,42 @@
+{
+    "data": {
+        "Id": 2,
+        "stuid": "1234502",
+        "name": "洪林",
+        "type": "走读生",
+        "class": "12345",
+        "department": "信息工程系",
+        "dt": "信息",
+        "openid": "oQPnk5LP5qFVTkFl8O4CodhG1MhM"
+    },
+    "lrequest": {
+        "id": 5,
+        "student": {
+            "Id": 2,
+            "stuid": "1234502",
+            "name": "洪林",
+            "type": "走读生",
+            "class": "12345",
+            "department": "信息工程系",
+            "dt": "信息",
+            "openid": "oQPnk5LP5qFVTkFl8O4CodhG1MhM"
+        },
+        "teacher": {
+            "Id": 1,
+            "tchid": "20180803",
+            "name": "江楠",
+            "class": "12345"
+        },
+        "fromtime": "1648805160000",
+        "totime": "1648807260000",
+        "reason": "测试",
+        "state": "agree"
+    },
+    "status": "ok",
+    "teacher": {
+        "Id": 1,
+        "tchid": "20180803",
+        "name": "江楠",
+        "class": "12345"
+    }
+}
