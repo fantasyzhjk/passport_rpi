@@ -8,6 +8,8 @@ on:
 
 env:
   CARGO_TERM_COLOR: always
+  PKG_CONFIG_PATH: /usr/lib/arm-linux-gnueabihf/pkgconfig
+  PKG_CONFIG_ALLOW_CROSS: 1
 
 jobs:
   build:
@@ -17,11 +19,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: install deps
-      run: sudo apt update -y && sudo apt install binutils-arm-linux-gnueabihf gcc-arm-linux-gnueabihf pkg-config-arm-linux-gnueabihf librust-alsa-sys-dev -y
+      run: sudo apt update -y && sudo apt install binutils-arm-linux-gnueabihf gcc-arm-linux-gnueabihf pkg-config-arm-linux-gnueabihf librust-alsa-sys-dev libssl-dev -y
     - name: Install target
       run: rustup target install armv7-unknown-linux-gnueabihf
     - name: Build artifact
-      run: PKG_CONFIG_PATH=/usr/lib/arm-linux-gnueabihf/pkgconfig PKG_CONFIG_ALLOW_CROSS=1 cargo build --release --target armv7-unknown-linux-gnueabihf
+      run: cargo build --release --target armv7-unknown-linux-gnueabihf
     - name: Upload Build
       uses: actions/upload-artifact@v2
       with:
