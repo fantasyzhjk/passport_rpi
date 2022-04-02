@@ -16,6 +16,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: install binutils
+      run: sudo apt install binutils-arm-linux-gnueabihf -y
+    - name: install linker
+      run: sudo apt install gcc-arm-linux-gnueabihf -y
     - name: install alsa-dev
       run: sudo apt install librust-alsa-sys-dev -y
     - name: Install target
