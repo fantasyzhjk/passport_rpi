@@ -17,7 +17,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Install target
-    - name: rustup target install armv7-unknown-linux-gnueabihf
+      run: rustup target install armv7-unknown-linux-gnueabihf
+    - name: Build artifact
       run: cargo build --release --target armv7-unknown-linux-gnueabihf
     - name: Upload Build
       uses: actions/upload-artifact@v2
