@@ -17,7 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: install alsa-dev
-      run: apt install librust-alsa-sys-dev
+      run: apt install librust-alsa-sys-dev -y
     - name: Install target
       run: rustup target install armv7-unknown-linux-gnueabihf
     - name: Build artifact
