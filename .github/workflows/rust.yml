@@ -19,7 +19,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: install deps
-      run: sudo apt update -y && sudo apt install binutils-arm-linux-gnueabihf gcc-arm-linux-gnueabihf pkg-config-arm-linux-gnueabihf -y
+      run: sudo apt update -y && sudo apt install binutils-arm-linux-gnueabihf gcc-arm-linux-gnueabihf pkg-config-arm-linux-gnueabihf libalsa-ocaml-dev -y
     - name: Install target
       run: rustup target install armv7-unknown-linux-gnueabihf
     - name: Build artifact
