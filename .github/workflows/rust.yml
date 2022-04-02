@@ -1,0 +1,28 @@
+name: Rust
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install target
+    - name: rustup target install armv7-unknown-linux-gnueabihf
+      run: cargo build --release --target armv7-unknown-linux-gnueabihf
+    - name: Upload Build
+      uses: actions/upload-artifact@v2
+      with:
+        name: passport-rpi
+        path: |
+          target\armv7-unknown-linux-gnueabihf\passport_rpi
+        retention-days: 1
